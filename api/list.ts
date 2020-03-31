@@ -10,10 +10,9 @@ interface GetMovieListParams {
 export const getMovieList = async (params: GetMovieListParams) => {
   const { s, type, callback } = params;
   const res = await axios.get(
-    `${API_PROTOCOL}${API_HOST}/?apikey=${API_KEY}&s=${s}&type=${type}`
+    `${API_PROTOCOL}${API_HOST}/?apikey=${API_KEY}&s=${s}&type=${type}&page=1`
   );
-  console.log('res.data.Search', res.data.Search);
-  if (callback) {
+  if (callback && res.data.Search) {
     callback(res.data.Search);
   }
 };

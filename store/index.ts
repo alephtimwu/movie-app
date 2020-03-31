@@ -34,6 +34,8 @@ const UseContext = ({ initTest = { init: 'init' } }) => {
   // set global state here.
   const [test, setTest] = useState(initTest);
   const [movies, setMovies] = useState(mockMovies.mock);
+  const [series, setSeries] = useState(mockMovies.mock);
+  const [episodes, setEpisodes] = useState(mockMovies.mock);
   const [movie, setMovie] = useState<Movie>({});
   return {
     test,
@@ -41,7 +43,11 @@ const UseContext = ({ initTest = { init: 'init' } }) => {
     movies,
     setMovies,
     movie,
-    setMovie
+    setMovie,
+    series,
+    setSeries,
+    episodes,
+    setEpisodes
   };
 };
 

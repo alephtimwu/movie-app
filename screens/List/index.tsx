@@ -58,6 +58,24 @@ export default ({ navigation }) => {
           console.log('request sent');
         }
       });
+      getMovieList({
+        s: search,
+        type: 'series',
+        callback: data => {
+          setSeries(data);
+          setIsLoading(false);
+          console.log('request sent');
+        }
+      });
+      getMovieList({
+        s: search,
+        type: 'episode',
+        callback: data => {
+          setEpisodes(data);
+          setIsLoading(false);
+          console.log('request sent');
+        }
+      });
     }
   }, [search]);
 

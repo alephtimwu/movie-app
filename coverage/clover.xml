@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1585726693846" clover="3.2.0">
-  <project timestamp="1585726693846" name="All files">
-    <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0" elements="0" coveredelements="0" complexity="0" loc="0" ncloc="0" packages="0" files="0" classes="0"/>
+<coverage generated="1585728996778" clover="3.2.0">
+  <project timestamp="1585728996778" name="All files">
+    <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1" elements="5" coveredelements="5" complexity="0" loc="4" ncloc="4" packages="2" files="2" classes="2"/>
+    <package name="assets">
+      <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="icon-arrow-left.png" path="/Users/tim/Desktop/code/movie-app/assets/icon-arrow-left.png">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="components.BackButton">
+      <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="index.tsx" path="/Users/tim/Desktop/code/movie-app/components/BackButton/index.tsx">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="13" count="1" type="stmt"/>
+      </file>
+    </package>
   </project>
 </coverage>

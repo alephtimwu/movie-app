@@ -24,18 +24,18 @@ console.warn = jest.fn(mockConsoleMethod(console.warn));
 console.error = jest.fn(mockConsoleMethod(console.error));
 // console.log = jest.fn(mockConsoleMethod(console.log));
 
-window.matchMedia =
-  window.matchMedia ||
-  function() {
-    return {
-      matches: false,
-      addListener: function() {},
-      removeListener: function() {}
-    };
-  };
+// window.matchMedia =
+//   window.matchMedia ||
+//   function() {
+//     return {
+//       matches: false,
+//       addListener: function() {},
+//       removeListener: function() {}
+//     };
+//   };
 
-window.requestAnimationFrame =
-  window.requestAnimationFrame ||
-  function(callback) {
-    setTimeout(callback, 0);
-  };
+// window.requestAnimationFrame =
+//   window.requestAnimationFrame ||
+//   function(callback) {
+//     setTimeout(callback, 0);
+//   };

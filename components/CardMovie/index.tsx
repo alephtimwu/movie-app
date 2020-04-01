@@ -38,7 +38,7 @@ export default ({ movie, onPress, width, height }: CardMovieProps) => {
 
   return (
     <StyledCard>
-      <TouchableOpacity onPress={handlePressMovie}>
+      <TouchableOpacity onPress={handlePressMovie} testID="card-press">
         <StyledPoster width={width} height={height} source={{ uri: Poster }} />
       </TouchableOpacity>
       <StyledTitleWrapper width={width}>

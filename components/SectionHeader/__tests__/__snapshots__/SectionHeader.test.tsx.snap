@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SectionHeader => SectionHeader should render correctly 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "flexDirection": "row",
+        "justifyContent": "center",
+      },
+      Object {
+        "alignItems": "flex-end",
+      },
+    ]
+  }
+>
+  <View
+    style={
+      Object {
+        "flex": 2,
+      }
+    }
+  >
+    <Text
+      style={
+        Object {
+          "color": "#fff",
+          "fontFamily": "Montserrat",
+          "fontSize": 21,
+          "lineHeight": 21,
+          "textAlign": "left",
+        }
+      }
+    >
+      Test
+    </Text>
+  </View>
+  <View
+    style={
+      Object {
+        "flex": 1,
+      }
+    }
+  >
+    <Text
+      style={
+        Object {
+          "color": "#9da3b4",
+          "fontFamily": "Montserrat",
+          "fontSize": 10,
+          "lineHeight": 10,
+          "textAlign": "right",
+        }
+      }
+    >
+      View All
+    </Text>
+  </View>
+</View>
+`;

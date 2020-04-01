@@ -10,7 +10,6 @@ export const Description = styled.Text({
 });
 
 export const Container = styled.View`
-  padding-top: 40px;
   flex: 1;
   background-color: #1d1d27;
   border: none;
@@ -20,6 +19,10 @@ export const Container = styled.View`
 export const StyledSearchBar = styled(SearchBar)``;
 
 export const styles = StyleSheet.create({
+  SafeHeader: {
+    flex: 0,
+    backgroundColor: '#1d1d27'
+  },
   SearchBar: {
     width: '100%',
     backgroundColor: '#1d1d27',
@@ -29,7 +32,6 @@ export const styles = StyleSheet.create({
     borderWidth: 0
   },
   ScrollView: {
-    fontFamily: 'Montserrat',
     width: 375,
     backgroundColor: '#1D1D27'
   },

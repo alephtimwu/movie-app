@@ -10,8 +10,6 @@ export const StyledPoster = styled.Image`
 
 export const StyledTitleWrapper = styled.View`
   margin-top: 10px;
-  white-space: nowrap;
-  text-overflow: ellipsis;
   overflow: hidden;
   ${({ width }) => `width: ${width ? width - 20 : 210}px;`}
 `;

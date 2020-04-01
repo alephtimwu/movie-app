@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { View, ScrollView } from 'react-native';
+import { View, ScrollView, SafeAreaView } from 'react-native';
 import { styles, StyledSearchBar, Container } from './style';
 import GlobalState from '../../store';
+import globalStyles from '../../constants/styles';
 import { SectionHeader, CardMovie } from '../../components';
 import { getMovieList } from '../../api/list';
 
@@ -84,73 +85,82 @@ export default ({ navigation }) => {
   };
 
   return !isLoading ? (
-    <Container>
-      <StyledSearchBar
-        placeholder="Type Here..."
-        onChangeText={setSearch}
-        value={search}
-        containerStyle={styles.SearchBar}
-      />
-      <ScrollView contentContainerStyle={styles.ScrollView}>
-        <View style={styles.SectionHeaderWrapper}>
-          <SectionHeader>Movies on Theater</SectionHeader>
-        </View>
-        <ScrollView
-          horizontal={true}
-          contentContainerStyle={styles.ScrollViewWrapper}
-        >
-          <View style={styles.SliderWrapper}>
-            {movies.map((m, index) => {
-              return (
-                <CardMovie key={index} movie={m} onPress={handlePressMovie} />
-              );
-            })}
-          </View>
-        </ScrollView>
-        <View style={styles.SectionHeaderWrapper}>
-          <SectionHeader>Series</SectionHeader>
-        </View>
-        <ScrollView
-          horizontal={true}
-          contentContainerStyle={styles.ScrollViewWrapper}
-        >
-          <View style={styles.SliderWrapper}>
-            {series.map((m, index) => {
-              return (
-                <CardMovie
-                  width={105}
-                  height={155}
-                  key={index}
-                  movie={m}
-                  onPress={handlePressMovie}
-                />
-              );
-            })}
-          </View>
-        </ScrollView>
-        <View style={styles.SectionHeaderWrapper}>
-          <SectionHeader>Episodes</SectionHeader>
-        </View>
-        <ScrollView
-          horizontal={true}
-          contentContainerStyle={styles.ScrollViewWrapper}
-        >
-          <View style={styles.SliderWrapper}>
-            {episodes.map((m, index) => {
-              return (
-                <CardMovie
-                  width={105}
-                  height={155}
-                  key={index}
-                  movie={m}
-                  onPress={handlePressMovie}
-                />
-              );
-            })}
-          </View>
-        </ScrollView>
-      </ScrollView>
-    </Container>
+    <React.Fragment>
+      <SafeAreaView style={styles.SafeHeader}></SafeAreaView>
+      <SafeAreaView style={globalStyles.Flex1}>
+        <Container>
+          <StyledSearchBar
+            placeholder="Type Here..."
+            onChangeText={setSearch}
+            value={search}
+            containerStyle={styles.SearchBar}
+          />
+          <ScrollView contentContainerStyle={styles.ScrollView}>
+            <View style={styles.SectionHeaderWrapper}>
+              <SectionHeader>Movies on Theater</SectionHeader>
+            </View>
+            <ScrollView
+              horizontal={true}
+              contentContainerStyle={styles.ScrollViewWrapper}
+            >
+              <View style={styles.SliderWrapper}>
+                {movies.map((m, index) => {
+                  return (
+                    <CardMovie
+                      key={index}
+                      movie={m}
+                      onPress={handlePressMovie}
+                    />
+                  );
+                })}
+              </View>
+            </ScrollView>
+            <View style={styles.SectionHeaderWrapper}>
+              <SectionHeader>Series</SectionHeader>
+            </View>
+            <ScrollView
+              horizontal={true}
+              contentContainerStyle={styles.ScrollViewWrapper}
+            >
+              <View style={styles.SliderWrapper}>
+                {series.map((m, index) => {
+                  return (
+                    <CardMovie
+                      width={105}
+                      height={155}
+                      key={index}
+                      movie={m}
+                      onPress={handlePressMovie}
+                    />
+                  );
+                })}
+              </View>
+            </ScrollView>
+            <View style={styles.SectionHeaderWrapper}>
+              <SectionHeader>Episodes</SectionHeader>
+            </View>
+            <ScrollView
+              horizontal={true}
+              contentContainerStyle={styles.ScrollViewWrapper}
+            >
+              <View style={styles.SliderWrapper}>
+                {episodes.map((m, index) => {
+                  return (
+                    <CardMovie
+                      width={105}
+                      height={155}
+                      key={index}
+                      movie={m}
+                      onPress={handlePressMovie}
+                    />
+                  );
+                })}
+              </View>
+            </ScrollView>
+          </ScrollView>
+        </Container>
+      </SafeAreaView>
+    </React.Fragment>
   ) : (
     <View></View>
   );

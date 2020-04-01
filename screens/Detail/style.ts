@@ -5,10 +5,12 @@ import { SearchBar } from 'react-native-elements';
 //     border-radius: 10px;
 // `
 export const styles = StyleSheet.create({
+  SafeHeader: {
+    flex: 0,
+    backgroundColor: '#1d1d27'
+  },
   ScrollView: {
-    paddingTop: 40,
     width: 375,
-    fontFamily: 'Montserrat',
     backgroundColor: '#1D1D27'
   }
 });

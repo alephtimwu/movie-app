@@ -15,8 +15,6 @@ Mobile app for searching OMDB movies.
 ![default](./assets/readme/default.png)
 ![search](./assets/readme/search.png)
 ![detail](./assets/readme/detail.png)
-![search2](./assets/readme/search2.png)
-![detail2](./assets/readme/detail2.png)
 
 ## Approaches
 

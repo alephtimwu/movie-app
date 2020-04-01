@@ -9,6 +9,17 @@ import DetailScreen from './screens/Detail';
 
 const Stack = createStackNavigator();
 
+const theme = {
+  dark: true,
+  colors: {
+    primary: 'rgb(255, 45, 85)',
+    background: '#1d1d27',
+    card: 'rgb(255, 255, 255)',
+    text: '#ffffff',
+    border: 'rgb(199, 199, 204)'
+  }
+};
+
 function App() {
   const [isFontLoaded, setIsFontLoaded] = useState(false);
   useEffect(() => {
@@ -23,7 +34,7 @@ function App() {
   };
 
   return isFontLoaded ? (
-    <NavigationContainer>
+    <NavigationContainer theme={theme}>
       <Stack.Navigator initialRouteName="Home">
         <Stack.Screen
           name="Home"

@@ -1,9 +1,6 @@
 import styled, { css } from '@emotion/native';
 import { StyleSheet, View, ScrollView } from 'react-native';
 import { SearchBar } from 'react-native-elements';
-// css`
-//     border-radius: 10px;
-// `
 
 export const Description = styled.Text({
   color: 'hotpink'

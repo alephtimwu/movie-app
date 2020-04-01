@@ -3,7 +3,7 @@ import { View, ScrollView, SafeAreaView } from 'react-native';
 import { styles, StyledSearchBar, Container } from './style';
 import GlobalState from '../../store';
 import globalStyles from '../../constants/styles';
-import { SectionHeader, CardMovie } from '../../components';
+import { SectionHeader, CardMovie, Loader } from '../../components';
 import { getMovieList } from '../../api/list';
 
 export default ({ navigation }) => {
@@ -84,7 +84,7 @@ export default ({ navigation }) => {
     navigation.navigate('Detail', { id });
   };
 
-  return !isLoading ? (
+  return (
     <React.Fragment>
       <SafeAreaView style={styles.SafeHeader}></SafeAreaView>
       <SafeAreaView style={globalStyles.Flex1}>
@@ -95,73 +95,75 @@ export default ({ navigation }) => {
             value={search}
             containerStyle={styles.SearchBar}
           />
-          <ScrollView contentContainerStyle={styles.ScrollView}>
-            <View style={styles.SectionHeaderWrapper}>
-              <SectionHeader>Movies on Theater</SectionHeader>
-            </View>
-            <ScrollView
-              horizontal={true}
-              contentContainerStyle={styles.ScrollViewWrapper}
-            >
-              <View style={styles.SliderWrapper}>
-                {movies.map((m, index) => {
-                  return (
-                    <CardMovie
-                      key={index}
-                      movie={m}
-                      onPress={handlePressMovie}
-                    />
-                  );
-                })}
+          {!isLoading ? (
+            <ScrollView contentContainerStyle={styles.ScrollView}>
+              <View style={styles.SectionHeaderWrapper}>
+                <SectionHeader>Movies on Theater</SectionHeader>
               </View>
-            </ScrollView>
-            <View style={styles.SectionHeaderWrapper}>
-              <SectionHeader>Series</SectionHeader>
-            </View>
-            <ScrollView
-              horizontal={true}
-              contentContainerStyle={styles.ScrollViewWrapper}
-            >
-              <View style={styles.SliderWrapper}>
-                {series.map((m, index) => {
-                  return (
-                    <CardMovie
-                      width={105}
-                      height={155}
-                      key={index}
-                      movie={m}
-                      onPress={handlePressMovie}
-                    />
-                  );
-                })}
+              <ScrollView
+                horizontal={true}
+                contentContainerStyle={styles.ScrollViewWrapper}
+              >
+                <View style={styles.SliderWrapper}>
+                  {movies.map((m, index) => {
+                    return (
+                      <CardMovie
+                        key={index}
+                        movie={m}
+                        onPress={handlePressMovie}
+                      />
+                    );
+                  })}
+                </View>
+              </ScrollView>
+              <View style={styles.SectionHeaderWrapper}>
+                <SectionHeader>Series</SectionHeader>
               </View>
-            </ScrollView>
-            <View style={styles.SectionHeaderWrapper}>
-              <SectionHeader>Episodes</SectionHeader>
-            </View>
-            <ScrollView
-              horizontal={true}
-              contentContainerStyle={styles.ScrollViewWrapper}
-            >
-              <View style={styles.SliderWrapper}>
-                {episodes.map((m, index) => {
-                  return (
-                    <CardMovie
-                      width={105}
-                      height={155}
-                      key={index}
-                      movie={m}
-                      onPress={handlePressMovie}
-                    />
-                  );
-                })}
+              <ScrollView
+                horizontal={true}
+                contentContainerStyle={styles.ScrollViewWrapper}
+              >
+                <View style={styles.SliderWrapper}>
+                  {series.map((m, index) => {
+                    return (
+                      <CardMovie
+                        width={105}
+                        height={155}
+                        key={index}
+                        movie={m}
+                        onPress={handlePressMovie}
+                      />
+                    );
+                  })}
+                </View>
+              </ScrollView>
+              <View style={styles.SectionHeaderWrapper}>
+                <SectionHeader>Episodes</SectionHeader>
               </View>
+              <ScrollView
+                horizontal={true}
+                contentContainerStyle={styles.ScrollViewWrapper}
+              >
+                <View style={styles.SliderWrapper}>
+                  {episodes.map((m, index) => {
+                    return (
+                      <CardMovie
+                        width={105}
+                        height={155}
+                        key={index}
+                        movie={m}
+                        onPress={handlePressMovie}
+                      />
+                    );
+                  })}
+                </View>
+              </ScrollView>
             </ScrollView>
-          </ScrollView>
+          ) : (
+            <Loader />
+          )}
         </Container>
       </SafeAreaView>
     </React.Fragment>
-  ) : (
-    <View></View>
   );
 };

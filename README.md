@@ -2,9 +2,10 @@
 
 Mobile app for searching OMDB movies.
 
-### Table of Contents:
+### Table of Contents
 
-- [OMDB movies](#markdown-header-cimb-clicks) - [Table of Contents:](#markdown-header-table-of-contents)
+- [OMDB movies](#markdown-header-omdb-movies)
+- [Table of Contents:](#markdown-header-table-of-contents)
   - [Screenshots](#markdown-header-screenshots)
   - [Approaches](#markdown-header-approaches)
   - [USEFUL LINKS](#markdown-header-useful-links)

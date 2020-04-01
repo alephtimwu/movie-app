@@ -102,6 +102,18 @@ export default ({ route, navigation }) => {
                   }}
                 ></Image>
                 <LinearGradient
+                  colors={['#1D1D27', 'transparent']}
+                  style={{
+                    position: 'absolute',
+                    top: 0,
+                    left: 0,
+                    right: 0,
+                    zIndex: 10,
+                    width: '100%',
+                    height: 120
+                  }}
+                ></LinearGradient>
+                <LinearGradient
                   colors={['transparent', '#1D1D27']}
                   start={[1, 0]}
                   end={[0, 0]}

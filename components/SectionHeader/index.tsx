@@ -6,7 +6,7 @@ import { StyledHeading, StyledViewAll } from './style';
 export default ({ children, moreText = 'View All' }) => {
   return (
     <View style={[globalStyles.Flex, globalStyles.FlexBottom]}>
-      <View style={globalStyles.Flex1}>
+      <View style={globalStyles.Flex2}>
         <StyledHeading>{children}</StyledHeading>
       </View>
       <View style={globalStyles.Flex1}>

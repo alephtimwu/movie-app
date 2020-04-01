@@ -56,7 +56,8 @@ export const styles = StyleSheet.create({
   ScrollView: {
     width: 375,
     backgroundColor: '#1D1D27',
-    paddingBottom: 43
+    paddingBottom: 43,
+    marginBottom: 43
   },
   SectionHeaderWrapper: {
     paddingLeft: 24,

@@ -1,11 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import * as Font from 'expo-font';
+import { TouchableOpacity, View } from 'react-native';
 import GlobalState from './store';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
 import ListScreen from './screens/List';
 import DetailScreen from './screens/Detail';
+
+import { BackButton, FavButton, ShareButton } from './components';
+import globalStyles from './constants/styles';
 
 const Stack = createStackNavigator();
 
@@ -53,7 +57,7 @@ function App() {
         <Stack.Screen
           name="Detail"
           component={DetailScreen}
-          options={{
+          options={({ navigation, route }) => ({
             title: '',
             headerTransparent: true,
             headerStyle: {
@@ -61,8 +65,27 @@ function App() {
               borderWidth: 0,
               borderColor: '#1D1D27'
             },
-            headerTintColor: '#fff'
-          }}
+            headerTintColor: '#fff',
+            headerLeft: () => {
+              return (
+                <TouchableOpacity onPress={() => navigation.goBack()}>
+                  <BackButton />
+                </TouchableOpacity>
+              );
+            },
+            headerRight: () => {
+              return (
+                <View style={globalStyles.Flex}>
+                  <TouchableOpacity>
+                    <ShareButton />
+                  </TouchableOpacity>
+                  <TouchableOpacity>
+                    <FavButton />
+                  </TouchableOpacity>
+                </View>
+              );
+            }
+          })}
         />
       </Stack.Navigator>
     </NavigationContainer>

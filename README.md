@@ -86,8 +86,6 @@ Mobile app for searching OMDB movies.
 
 ## GETTING STARTED WITH DEVELOPMENT
 
-There's is a submodule in this project, **messenger**. Please sync that submodule before start building. Command to use: `git submodule update --init`
-
 1. Installation:
 
    - make sure nodejs 12+ is pre-installed

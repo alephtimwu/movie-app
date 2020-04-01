@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import constate from 'constate';
 import mockMovies from '../constants/movies';
+import mockMovie from '../constants/movie';
 
 declare type Movie = {
   Title?: string;
@@ -36,7 +37,7 @@ const UseContext = ({ initTest = { init: 'init' } }) => {
   const [movies, setMovies] = useState<Movie[]>(mockMovies.mock);
   const [series, setSeries] = useState<Movie[]>(mockMovies.mock);
   const [episodes, setEpisodes] = useState<Movie[]>(mockMovies.mock);
-  const [movie, setMovie] = useState<Movie>({});
+  const [movie, setMovie] = useState<Movie>(mockMovie);
   return {
     test,
     setTest,

@@ -43,8 +43,8 @@ export default ({ route, navigation }) => {
   const { test, movie, setMovie } = GlobalState();
   const [isLoading, setIsLoading] = useState(true);
   const [search, setSearch] = useState('');
-  // const id = 'tt4154664';
-  const { id } = route.params;
+  const { params = {} } = route;
+  const { id = 'tt4154664' } = params;
   const {
     Title,
     Year,

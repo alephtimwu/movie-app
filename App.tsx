@@ -4,7 +4,7 @@ import { TouchableOpacity, View } from 'react-native';
 import GlobalState from './store';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-
+import * as Sharing from 'expo-sharing';
 import ListScreen from './screens/List';
 import DetailScreen from './screens/Detail';
 
@@ -26,6 +26,7 @@ const theme = {
 
 function App() {
   const [isFontLoaded, setIsFontLoaded] = useState(false);
+  const { movie } = GlobalState();
   useEffect(() => {
     loadFonts();
   }, []);
@@ -35,6 +36,14 @@ function App() {
       Montserrat: require('./assets/fonts/Montserrat-Regular.ttf')
     });
     setIsFontLoaded(true);
+  };
+
+  const handleShare = async () => {
+    if (!(await Sharing.isAvailableAsync())) {
+      alert(`Uh oh, sharing isn't available on your platform`);
+      return;
+    }
+    movie && Sharing.shareAsync(movie.Poster);
   };
 
   return isFontLoaded ? (
@@ -76,7 +85,7 @@ function App() {
             headerRight: () => {
               return (
                 <View style={globalStyles.Flex}>
-                  <TouchableOpacity>
+                  <TouchableOpacity onPress={handleShare}>
                     <ShareButton />
                   </TouchableOpacity>
                   <TouchableOpacity>

@@ -4,11 +4,7 @@
     "slug": "movie-app",
     "privacy": "public",
     "sdkVersion": "36.0.0",
-    "platforms": [
-      "ios",
-      "android",
-      "web"
-    ],
+    "platforms": ["ios", "android", "web"],
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -20,12 +16,16 @@
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
+    "description": "",
     "ios": {
+      "bundleIdentifier": "com.alephlabs.movieapp",
+      "buildNumber": "1.0.0",
       "supportsTablet": true
     },
-    "description": ""
+    "android": {
+      "package": "com.alephlabs.movieapp",
+      "versionCode": 1
+    }
   }
 }

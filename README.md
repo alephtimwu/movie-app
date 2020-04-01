@@ -10,6 +10,16 @@ Mobile app for searching OMDB movies.
   - [TECHNICAL SOLUTIONS](#markdown-header-technical-solutions)
   - [FOLDER STRUCTURE](#markdown-header-folder-structure)
 
+## Screenshots
+
+![Default](./assets/readme/default.png)
+
+## Approaches
+
+1. Register new Expo account
+   - to make a new Expo created react native application, we need a fresh account.
+   - to make the debug process, share process, deployment process easier
+
 ## USEFUL LINKS
 
 - Application Download: https://expo.io/@alephtimwu/movie-app

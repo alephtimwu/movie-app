@@ -2,16 +2,16 @@ import React from 'react';
 import { render, fireEvent } from 'react-native-testing-library';
 // import { CrpAll } from '__mocks__';
 import UseAppContext from '../../../store/index';
-import BackButton from '../index';
+import FavButton from '../index';
 
-describe('BackButton page =>', () => {
+describe('FavButton page =>', () => {
   let tree = null;
 
   beforeEach(() => {
-    tree = render(<BackButton />);
+    tree = render(<FavButton />);
   });
 
-  test('BackButton should render correctly', () => {
+  test('FavButton should render correctly', () => {
     expect(tree).toMatchSnapshot();
   });
 

@@ -7,7 +7,7 @@
     "web": "expo start --web",
     "eject": "expo eject",
     "test": "jest --testTimeout -u",
-    "test:watch": "jest -u --watchAll --coverage --testTimeout",
+    "test:watch": "node ./node_modules/jest/bin/jest.js  -u --watchAll --coverage --testTimeout",
     "open:coverage": "TZ=UTC CI=true yarn test --coverage -u && open ./coverage/lcov-report/index.html",
     "test:coverage": "TZ=UTC CI=true yarn test --coverage"
   },
@@ -17,7 +17,6 @@
     "@react-native-community/masked-view": "^0.1.7",
     "@react-navigation/native": "^5.1.4",
     "@react-navigation/stack": "^5.2.9",
-    "@testing-library/react-native": "^5.0.3",
     "@types/jest": "^25.1.4",
     "axios": "^0.19.2",
     "constate": "^2.0.0",
@@ -41,21 +40,12 @@
     "@types/react-native": "~0.60.23",
     "babel-preset-expo": "~8.0.0",
     "jest-expo": "^37.0.0",
+    "react-native-testing-library": "^1.13.0",
     "typescript": "~3.6.3"
   },
   "jest": {
     "preset": "jest-expo",
-    "testEnvironment": "jsdom",
-    "setupFilesAfterEnv": [
-      "./setupTests.ts"
-    ],
-    "moduleFileExtensions": [
-      "js",
-      "ts",
-      "tsx"
-    ],
     "testMatch": [
-      "/__tests__/BackButton.test.tsx",
       "**/*.test.tsx"
     ],
     "transformIgnorePatterns": [

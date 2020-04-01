@@ -117,7 +117,13 @@ export default ({ navigation }) => {
           <View style={styles.SliderWrapper}>
             {series.map((m, index) => {
               return (
-                <CardMovie key={index} movie={m} onPress={handlePressMovie} />
+                <CardMovie
+                  width={105}
+                  height={155}
+                  key={index}
+                  movie={m}
+                  onPress={handlePressMovie}
+                />
               );
             })}
           </View>
@@ -132,7 +138,13 @@ export default ({ navigation }) => {
           <View style={styles.SliderWrapper}>
             {episodes.map((m, index) => {
               return (
-                <CardMovie key={index} movie={m} onPress={handlePressMovie} />
+                <CardMovie
+                  width={105}
+                  height={155}
+                  key={index}
+                  movie={m}
+                  onPress={handlePressMovie}
+                />
               );
             })}
           </View>

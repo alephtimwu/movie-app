@@ -132,11 +132,13 @@ export const PropertyLabel = styled.Text`
   font-size: 14px;
   line-height: 21px;
   color: #9da3b4;
+  font-family: Montserrat;
 `;
 export const PropertyValue = styled.Text`
   font-size: 14px;
   line-height: 21px;
   color: #fff;
+  font-family: Montserrat;
 `;
 
 export const StoryLineDesc = styled.Text`

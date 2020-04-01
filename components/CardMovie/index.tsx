@@ -13,19 +13,21 @@ import {
 } from './style';
 
 interface MovieItem {
-  Poster: string;
-  Title: string;
-  Year: string;
-  imdbID: string;
-  Type: string;
+  Poster?: string;
+  Title?: string;
+  Year?: string;
+  imdbID?: string;
+  Type?: string;
 }
 
 interface CardMovieProps {
   movie: MovieItem;
   onPress?: (id) => void;
+  width?: number;
+  height?: number;
 }
 
-export default ({ movie, onPress }: CardMovieProps) => {
+export default ({ movie, onPress, width, height }: CardMovieProps) => {
   const { Poster, Title, Year, imdbID } = movie;
 
   const handlePressMovie = () => {
@@ -37,9 +39,9 @@ export default ({ movie, onPress }: CardMovieProps) => {
   return (
     <StyledCard>
       <TouchableOpacity onPress={handlePressMovie}>
-        <StyledPoster source={{ uri: Poster }} />
+        <StyledPoster width={width} height={height} source={{ uri: Poster }} />
       </TouchableOpacity>
-      <StyledTitleWrapper>
+      <StyledTitleWrapper width={width}>
         <StyledTitle numberOfLines={1}>{Title}</StyledTitle>
       </StyledTitleWrapper>
       <StyledReviewWrapper>

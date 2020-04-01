@@ -29,8 +29,12 @@ function App() {
           name="Home"
           component={ListScreen}
           options={{
+            title: '',
+            headerTransparent: true,
             headerStyle: {
-              backgroundColor: '#1D1D27'
+              backgroundColor: '#1D1D27',
+              borderWidth: 0,
+              borderColor: '#1D1D27'
             },
             headerTintColor: '#fff'
           }}
@@ -42,7 +46,9 @@ function App() {
             title: '',
             headerTransparent: true,
             headerStyle: {
-              backgroundColor: '#1D1D27'
+              backgroundColor: '#1D1D27',
+              borderWidth: 0,
+              borderColor: '#1D1D27'
             },
             headerTintColor: '#fff'
           }}

@@ -33,9 +33,9 @@ declare type Movie = {
 const UseContext = ({ initTest = { init: 'init' } }) => {
   // set global state here.
   const [test, setTest] = useState(initTest);
-  const [movies, setMovies] = useState(mockMovies.mock);
-  const [series, setSeries] = useState(mockMovies.mock);
-  const [episodes, setEpisodes] = useState(mockMovies.mock);
+  const [movies, setMovies] = useState<Movie[]>(mockMovies.mock);
+  const [series, setSeries] = useState<Movie[]>(mockMovies.mock);
+  const [episodes, setEpisodes] = useState<Movie[]>(mockMovies.mock);
   const [movie, setMovie] = useState<Movie>({});
   return {
     test,

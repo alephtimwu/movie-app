@@ -4,8 +4,8 @@ export const StyledCard = styled.View`
   margin-right: 20px;
 `;
 export const StyledPoster = styled.Image`
-  width: 230px;
-  height: 340px;
+  ${({ width }) => `width: ${width || 230}px;`}
+  ${({ height }) => `height: ${height || 340}px;`}
 `;
 
 export const StyledTitleWrapper = styled.View`
@@ -13,7 +13,7 @@ export const StyledTitleWrapper = styled.View`
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
-  width: 210px;
+  ${({ width }) => `width: ${width ? width - 20 : 210}px;`}
 `;
 export const StyledTitle = styled.Text`
   text-align: left;

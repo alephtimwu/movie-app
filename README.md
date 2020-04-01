@@ -5,6 +5,8 @@ Mobile app for searching OMDB movies.
 ### Table of Contents:
 
 - [OMDB movies](#markdown-header-cimb-clicks) - [Table of Contents:](#markdown-header-table-of-contents)
+  - [Screenshots](#markdown-header-screenshots)
+  - [Approaches](#markdown-header-approaches)
   - [USEFUL LINKS](#markdown-header-useful-links)
   - [GETTING STARTED WITH DEVELOPMENT](#markdown-header-getting-started-with-development)
   - [TECHNICAL SOLUTIONS](#markdown-header-technical-solutions)
@@ -19,8 +21,52 @@ Mobile app for searching OMDB movies.
 ## Approaches
 
 1. Register new Expo account
+
    - to make a new Expo created react native application, we need a fresh account.
-   - to make the debug process, share process, deployment process easier
+   - to make the debug process, share process, deployment process easier.
+
+2. Create the bootstrap
+
+   - use Expo commands to create the barebone bootstrap.
+
+3. Plan the tasks
+
+   - which component should made common?
+   - how APIs should be structured?
+
+4. Structure the code
+
+   - create folders for each functional sector
+   - create child folders for each component/api
+
+5. Start coding
+
+   - prepare blank home screen
+   - start to write common components planed out earlier with priorities
+   - test those components in a clean home screen
+
+6. Use mock data
+
+   - fetch real data from api
+   - make them as mock data for more efficient development
+
+7. Work out the UI
+
+   - after all the structures are layed out, we can move to the actual skin
+   - keep on touching UI details until perfect
+
+8. Connect with real APIs
+
+   - use the store to define which data should be common, which should not
+   - use as less variables as possible to reduce the space opacity
+
+9. Tesing use interactions and functions
+
+   - after UI and data all connected, we can testing the functionalities based on the requirement
+
+10. Unit test
+    - after UI and Functional requirements all met, we need to make sure our code is 100% efficient and covered
+    - no code should be wasted
 
 ## USEFUL LINKS
 

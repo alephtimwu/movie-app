@@ -1,5 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { View, ScrollView, SafeAreaView } from 'react-native';
+import {
+  Text,
+  View,
+  ScrollView,
+  SafeAreaView,
+  TouchableOpacity
+} from 'react-native';
+import { Icon } from 'react-native-elements';
 import { styles, StyledSearchBar, Container } from './style';
 import GlobalState from '../../store';
 import globalStyles from '../../constants/styles';
@@ -18,6 +25,7 @@ export default ({ navigation }) => {
   } = GlobalState();
   const [isLoading, setIsLoading] = useState(true);
   const [search, setSearch] = useState('');
+  const [isSearchVisible, setIsSearchVisible] = useState(false);
 
   useEffect(() => {
     getMovieList({
@@ -89,12 +97,46 @@ export default ({ navigation }) => {
       <SafeAreaView style={styles.SafeHeader}></SafeAreaView>
       <SafeAreaView style={globalStyles.Flex1}>
         <Container>
-          <StyledSearchBar
-            placeholder="Type Here..."
-            onChangeText={setSearch}
-            value={search}
-            containerStyle={styles.SearchBar}
-          />
+          <View
+            style={[
+              globalStyles.Flex,
+              globalStyles.FlexLeft,
+              styles.MarginLF,
+              styles.MarginT
+            ]}
+          >
+            <Icon type="font-awesome" name="bars" color="#fff" size={17}></Icon>
+            <View
+              style={[
+                globalStyles.Flex,
+                globalStyles.Flex1,
+                globalStyles.FlexRight
+              ]}
+            >
+              <TouchableOpacity
+                style={[globalStyles.Flex, styles.SearchIconWrapper]}
+                onPress={() => setIsSearchVisible(true)}
+              >
+                <Icon
+                  type="font-awesome"
+                  name="search"
+                  color="#fff"
+                  size={17}
+                ></Icon>
+              </TouchableOpacity>
+              <View style={[globalStyles.Flex, styles.InitialWrapper]}>
+                <Text style={styles.InitialText}>LVP</Text>
+              </View>
+            </View>
+          </View>
+          {isSearchVisible && (
+            <StyledSearchBar
+              placeholder="Type Here..."
+              onChangeText={setSearch}
+              value={search}
+              containerStyle={styles.SearchBar}
+            />
+          )}
           {!isLoading ? (
             <ScrollView contentContainerStyle={styles.ScrollView}>
               <View style={styles.SectionHeaderWrapper}>

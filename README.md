@@ -12,7 +12,7 @@ Mobile app for searching OMDB movies.
 
 ## Screenshots
 
-![Default](./assets/readme/default.png)
+![Default](./assets/readme/default.png =750x1624)
 
 ## Approaches
 

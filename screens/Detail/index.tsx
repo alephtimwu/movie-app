@@ -190,9 +190,9 @@ export default ({ route, navigation }) => {
                     <MetaScore>{Metascore}</MetaScore>
                   </MetaScoreWrapper>
                   <MetaScoreLabel>Metascore</MetaScoreLabel>
-                  <CriticalViewWrapper>
+                  {/* <CriticalViewWrapper>
                     <CriticalViews>53 Critic Reviews</CriticalViews>
-                  </CriticalViewWrapper>
+                  </CriticalViewWrapper> */}
                 </View>
                 <View style={[globalStyles.Flex1]}>
                   <MetaScoreWrapper>
@@ -209,9 +209,9 @@ export default ({ route, navigation }) => {
                     </Text>{' '}
                     / 10
                   </MetaScoreLabel>
-                  <CriticalViewWrapper>
+                  {/* <CriticalViewWrapper>
                     <CriticalViews>53 Critic Reviews</CriticalViews>
-                  </CriticalViewWrapper>
+                  </CriticalViewWrapper> */}
                 </View>
                 <View style={[globalStyles.Flex1]}>
                   <MetaScoreWrapper>
@@ -223,9 +223,9 @@ export default ({ route, navigation }) => {
                     <MovieRating>{imdbVotes}</MovieRating>
                     <IconTri source={require('../../assets/icon-tri.png')} />
                   </View>
-                  <CriticalViewWrapper>
+                  {/* <CriticalViewWrapper>
                     <CriticalViews>53 Critic Reviews</CriticalViews>
-                  </CriticalViewWrapper>
+                  </CriticalViewWrapper> */}
                 </View>
               </View>
               <Spliter style={{ marginTop: 20 }} />
@@ -280,9 +280,7 @@ export default ({ route, navigation }) => {
                   marginBottom: 70
                 }}
               >
-                <SectionHeader moreText="SEE ALL">
-                  Full Cast & Crew
-                </SectionHeader>
+                <SectionHeader moreText="SEE ALL">Actors</SectionHeader>
                 <ScrollView horizontal={true} style={{ marginTop: 20 }}>
                   {actors.map((a, index) => {
                     return (

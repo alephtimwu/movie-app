@@ -5,7 +5,11 @@
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
-    "eject": "expo eject"
+    "eject": "expo eject",
+    "test": "jest --testTimeout --setupFilesAfterEnv ./setupTests.js -u",
+    "test:watch": "jest -u --watchAll --coverage --testTimeout --setupFilesAfterEnv ./setupTests.js",
+    "open:coverage": "TZ=UTC CI=true yarn test --coverage -u && open ./coverage/lcov-report/index.html",
+    "test:coverage": "TZ=UTC CI=true yarn test --coverage"
   },
   "dependencies": {
     "@emotion/core": "^10.0.28",
@@ -13,11 +17,13 @@
     "@react-native-community/masked-view": "^0.1.7",
     "@react-navigation/native": "^5.1.4",
     "@react-navigation/stack": "^5.2.9",
+    "@testing-library/react": "^10.0.2",
     "axios": "^0.19.2",
     "constate": "^2.0.0",
     "expo": "^36.0.2",
     "expo-linear-gradient": "~8.0.0",
     "expo-sharing": "~8.0.0",
+    "jest-config": "^25.2.4",
     "react": "~16.9.0",
     "react-dom": "~16.9.0",
     "react-native": "https://github.com/expo/react-native/archive/sdk-36.0.0.tar.gz",
@@ -33,7 +39,11 @@
     "@types/react": "~16.9.0",
     "@types/react-native": "~0.60.23",
     "babel-preset-expo": "~8.0.0",
+    "jest-expo": "^37.0.0",
     "typescript": "~3.6.3"
+  },
+  "jest": {
+    "preset": "jest-expo"
   },
   "private": true
 }

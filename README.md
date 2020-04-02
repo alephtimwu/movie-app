@@ -59,9 +59,9 @@ Mobile app for searching OMDB movies.
 8. Connect with real APIs
 
    - use the store to define which data should be common, which should not
-   - use as less variables as possible to reduce the space opacity
+   - use as less variables as possible to reduce the space complexity
 
-9. Tesing use interactions and functions
+9. Testing user interactions and functions
 
    - after UI and data all connected, we can testing the functionalities based on the requirement
 
